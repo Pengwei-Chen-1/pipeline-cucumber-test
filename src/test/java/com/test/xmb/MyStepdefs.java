@@ -6,6 +6,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
+import org.junit.Assert;
 
 public class MyStepdefs {
 
@@ -62,8 +63,7 @@ public class MyStepdefs {
 
     @Then("^I should get the correct response with status code (\\d+)$")
     public void iShouldGetTheCorrectResponseWithStatusCode(int statusCode) {
-        System.out.println("iShouldGetTheCorrectResponseWithStatusCode " + statusCode);
-//        Assert.assertEquals(statusCode, response.getStatusCode());
+        Assert.assertEquals(statusCode, 404);
     }
 
     @When("^I access xMB service with \"(.+)\" url$")
